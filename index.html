@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.css">
+    <style>
+        body {
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        body {
+            background-color:transparent ;
+            background-image: url("https://area.sinaapp.com/bingImg/");
+            background-position: center 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            -moz-background-size: cover;
+            -ms-background-size: cover;
+        }
+
+        .margin4 {
+            margin: 3px;
+            border: none;
+            font-family: "华文细黑";
+            font-weight: 600;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .margin4:hover{
+            color: #000;
+        }
+
+
+
+        .well {
+            position: fixed;
+            top: 0;
+            left:0;
+            right: 0;
+            background-color: rgba(0,0,0,.2);
+            box-shadow: 0 0 0 0 rgba(0,0,0,.2);
+            border: none;
+            padding: 0;
+        }
+
+        .app {
+            margin-top: 100px;
+            padding: 0 ;
+        }
+    </style>
+    <title>MyNav</title>
+</head>
+
+<body>
+<div class="well">
+
+    <a class="btn btn-primary-outline margin4"
+       href="http://oa.stu.edu.cn/login/Login.jsp/">汕大OA</a>
+    <a class="btn btn-primary-outline margin4"   href="http://my.stu.edu.cn/" style="color: #1ef1c4">MY STU</a>
+
+    <a class="btn btn-primary-outline margin4"   href="http://credit.stu.edu.cn/">学分制</a>
+
+    <a class="btn btn-primary-outline margin4"  href="http://newsao.stu.edu.cn/" style="color:#483eb8">事务系统</a>
+
+    <a class="btn btn-primary-outline margin4"  href="http://www.lib.stu.edu.cn/">图书馆</a>
+    <a class="btn btn-primary-outline margin4"   href="http://internet.stu.edu.cn/" style="color:#25212a"> 认证系统
+    </a>
+    <a class="btn btn-primary-outline margin4"  href="http://192.168.48.49:8080/hpao/main">水电费</a>
+
+    <a class="btn btn-primary-outline margin4"  href="http://dstu.webpress.top/" style="color:#ce5d37;">金凤导航</a>
+    <a class="btn btn-primary-outline margin4 "
+       href="http://phoenix.stu.edu.cn/bt/default.aspx">金凤BT</a>
+    <a class="btn btn-primary-outline margin4" href="https://www.nowcoder.com/" style="color:#a611ff">牛客网 </a>
+    <a class="btn btn-primary-outline margin4" href="http://www.w3school.com.cn/">w3School</a>
+    <a class="btn btn-primary-outline margin4"  href="https://github.com/" style="color:#a40819">Github </a>
+    <a class="btn btn-primary-outline margin4"  href="https://nba.hupu.com/" style="color:#97ff01">虎扑</a>
+    <!--<a class="btn btn-primary-outline margin4"-->
+    <!--href="http://scholarship.stu.edu.cn">汕大奖学金</a>-->
+</div>
+<div class="row app">
+    <div class="col-md-6">
+        <div class="input-group">
+            <input type="text" class="form-control" @keyup.13="baiduSearch" placeholder="We still believe!"
+                   v-model="baiduKeyword">
+            <span class="input-group-btn">
+                    <button class="btn btn-default" @click="baiduSearch" type="button">Baidu </button>
+                </span>
+        </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+
+    <div class="col-md-6">
+        <div class="input-group">
+            <input type="text" class="form-control" @keyup.13="googleSearch" placeholder="Go Warriors!"
+                   v-model="googleKeyword">
+            <span class="input-group-btn">
+                    <button class="btn btn-default" @click="googleSearch" type="button">Google</button>
+                </span>
+        </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+
+</div><!-- /.row -->
+
+
+
+
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/vue/2.6.3/vue.js"></script>
+<script>
+function initBackground() {
+
+}
+new Vue({
+    el: ".app",
+    data: {
+        baiduKeyword: "",
+        googleKeyword: "",
+    },
+    methods: {
+
+        baiduSearch: function () {
+            window.open("https://www.baidu.com/s?wd=" + this.baiduKeyword)
+
+        },
+        googleSearch: function () {
+            window.open("https://www.google.com.hk/search?safe=strict&hl=zh-CN&source=hp&ei=WCwFXfCRBIne0gKz7ajIAQ&q=" + this.googleKeyword + "&oq=" + "&gs_l=psy-ab.3..0l10.1582.1582..2069...0.0..0.292.292.2-1......0....1..gws-wiz.....0.r2I_kQNbwqA")
+        }
+    }
+})
+</script>
+
+</body>
+
+</html>
