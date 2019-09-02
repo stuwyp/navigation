@@ -62,29 +62,29 @@
 
     <a class="btn btn-primary-outline margin4"
        href="http://oa.stu.edu.cn/login/Login.jsp/">汕大OA</a>
-    <a class="btn btn-primary-outline margin4"   href="http://my.stu.edu.cn/" style="color: #1ef1c4">MY STU</a>
+    <a class="btn btn-primary-outline margin4"   href="http://my.stu.edu.cn/" style="color: #c9c9c9">MY STU</a>
 
     <a class="btn btn-primary-outline margin4"   href="http://credit.stu.edu.cn/">学分制</a>
 
-    <a class="btn btn-primary-outline margin4"  href="http://newsao.stu.edu.cn/" style="color:#483eb8">事务系统</a>
+    <a class="btn btn-primary-outline margin4"  href="http://newsao.stu.edu.cn/" style="color:#b8b8b8">事务系统</a>
 
     <a class="btn btn-primary-outline margin4"  href="http://www.lib.stu.edu.cn/">图书馆</a>
-    <a class="btn btn-primary-outline margin4"   href="http://internet.stu.edu.cn/" style="color:#25212a"> 认证系统
+    <a class="btn btn-primary-outline margin4"   href="http://internet.stu.edu.cn/" style="color:#dadada"> 认证系统
     </a>
     <a class="btn btn-primary-outline margin4"  href="http://192.168.48.49:8080/hpao/main">水电费</a>
 
-    <a class="btn btn-primary-outline margin4"  href="http://dstu.webpress.top/" style="color:#ce5d37;">金凤导航</a>
+    <a class="btn btn-primary-outline margin4"  href="http://dstu.webpress.top/" style="color:#cfcfcf;">金凤导航</a>
     <a class="btn btn-primary-outline margin4 "
        href="http://phoenix.stu.edu.cn/bt/default.aspx">金凤BT</a>
-    <a class="btn btn-primary-outline margin4" href="https://www.nowcoder.com/" style="color:#a611ff">牛客网 </a>
+    <a class="btn btn-primary-outline margin4" href="https://www.nowcoder.com/" style="color:#d9d9d9">牛客网 </a>
     <a class="btn btn-primary-outline margin4" href="http://www.w3school.com.cn/">w3School</a>
-    <a class="btn btn-primary-outline margin4"  href="https://github.com/" style="color:#a40819">Github </a>
-    <a class="btn btn-primary-outline margin4"  href="https://nba.hupu.com/" style="color:#97ff01">虎扑</a>
+    <a class="btn btn-primary-outline margin4"  href="https://github.com/" style="color:#a9a9a9">Github </a>
+    <a class="btn btn-primary-outline margin4"  href="https://nba.hupu.com/" style="color:#fff">虎扑</a>
     <!--<a class="btn btn-primary-outline margin4"-->
     <!--href="http://scholarship.stu.edu.cn">汕大奖学金</a>-->
 </div>
 <div class="row app">
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="input-group">
             <input type="text" class="form-control" @keyup.13="baiduSearch" placeholder="We still believe!"
                    v-model="baiduKeyword">
@@ -93,8 +93,16 @@
                 </span>
         </div><!-- /input-group -->
     </div><!-- /.col-lg-6 -->
-
-    <div class="col-md-6">
+    <div class="col-md-4">
+        <div class="input-group">
+            <input type="text" class="form-control" @keyup.13="dogeSearch" placeholder="Fighting!"
+                   v-model="dogeKeyword">
+            <span class="input-group-btn">
+                    <button class="btn btn-default" @click="dogeSearch" type="button">Doge </button>
+                </span>
+        </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+    <div class="col-md-4">
         <div class="input-group">
             <input type="text" class="form-control" @keyup.13="googleSearch" placeholder="Go Warriors!"
                    v-model="googleKeyword">
@@ -120,13 +128,16 @@ new Vue({
     el: ".app",
     data: {
         baiduKeyword: "",
+        dogeKeyword: "",
         googleKeyword: "",
     },
     methods: {
 
+        dogeSearch: function () {
+            window.open(`https://www.dogedoge.com/results?q=${this.dogeKeyword}&lang=auto`)
+        },
         baiduSearch: function () {
             window.open("https://www.baidu.com/s?wd=" + this.baiduKeyword)
-
         },
         googleSearch: function () {
             window.open("https://www.google.com.hk/search?safe=strict&hl=zh-CN&source=hp&ei=WCwFXfCRBIne0gKz7ajIAQ&q=" + this.googleKeyword + "&oq=" + "&gs_l=psy-ab.3..0l10.1582.1582..2069...0.0..0.292.292.2-1......0....1..gws-wiz.....0.r2I_kQNbwqA")
