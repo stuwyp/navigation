@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
             max-width: 900px;
@@ -53,6 +54,9 @@
             margin-top: 100px;
             padding: 0 ;
         }
+        .row{
+            min-width:1000px;
+        }
     </style>
     <title>MyNav</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> 
@@ -85,7 +89,7 @@
     <!--href="http://scholarship.stu.edu.cn">汕大奖学金</a>-->
 </div>
 <div class="row app">
-    <div class="col-md-4">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
         <div class="input-group">
             <input type="text" class="form-control" @keyup.13="baiduSearch" placeholder="We still believe!"
                    v-model="baiduKeyword">
@@ -93,8 +97,8 @@
                     <button class="btn btn-default" @click="baiduSearch" type="button">Baidu </button>
                 </span>
         </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->
-    <div class="col-md-4">
+    </div><!-- /.col-lg-3 -->
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
         <div class="input-group">
             <input type="text" class="form-control" @keyup.13="dogeSearch" placeholder="Fighting!"
                    v-model="dogeKeyword">
@@ -102,8 +106,8 @@
                     <button class="btn btn-default" @click="dogeSearch" type="button">Doge </button>
                 </span>
         </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->
-    <div class="col-md-4">
+    </div><!-- /.col-lg-3 -->
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
         <div class="input-group">
             <input type="text" class="form-control" @keyup.13="googleSearch" placeholder="Go Warriors!"
                    v-model="googleKeyword">
@@ -111,7 +115,16 @@
                     <button class="btn btn-default" @click="googleSearch" type="button">Google</button>
                 </span>
         </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->
+    </div><!-- /.col-lg-3 -->
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+        <div class="input-group">
+            <input type="text" class="form-control" @keyup.13="googleMirrorSearch" placeholder="Yes,I can!"
+                   v-model="googleKeyword">
+            <span class="input-group-btn">
+                    <button class="btn btn-default" @click="googleMirrorSearch" type="button">G Mirror</button>
+                </span>
+        </div><!-- /input-group -->
+    </div><!-- /.col-lg-3 -->
 
 </div><!-- /.row -->
 
@@ -142,6 +155,9 @@ new Vue({
         },
         googleSearch: function () {
             window.open("https://www.google.com.hk/search?safe=strict&hl=zh-CN&source=hp&ei=WCwFXfCRBIne0gKz7ajIAQ&q=" + this.googleKeyword + "&oq=" + "&gs_l=psy-ab.3..0l10.1582.1582..2069...0.0..0.292.292.2-1......0....1..gws-wiz.....0.r2I_kQNbwqA")
+        },
+        googleMirrorSearch: function () {
+            window.open("https://g.zmirrordemo.com/search?safe=strict&hl=zh-CN&source=hp&ei=WCwFXfCRBIne0gKz7ajIAQ&q=" + this.googleKeyword + "&oq=" + "&gs_l=psy-ab.3..0l10.1582.1582..2069...0.0..0.292.292.2-1......0....1..gws-wiz.....0.r2I_kQNbwqA")
         }
     }
 })
